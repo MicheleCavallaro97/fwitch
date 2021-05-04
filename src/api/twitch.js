@@ -41,7 +41,19 @@ export const getUsers = (id) => {
     }
   ).then((t) => t.json());
 };
-
+export const searchStreams = ({game_id = ''}) => {
+  return fetch(
+    `${baseUrl}/helix/streams?${new URLSearchParams({
+      game_id,
+    })}`,
+    {
+      headers: {
+        ...getRequiredHeaders(),
+      },
+      method: 'get',
+    }
+  ).then((t) => t.json());
+};
 export const getTopGames = ({
   after = '',
   before = '',

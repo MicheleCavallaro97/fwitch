@@ -1,9 +1,8 @@
 
-import React, { useEffect } from 'react';
 import { getGames, getTopGames, searchCategories } from '../../api/twitch';
 import useProfile from '../../hooks/useProfile';
 import classes from './navbar.module.css';
-import {useState} from 'react'
+
 
 const Navbar = (props) => {
   const { loading, error, user } = useProfile();
